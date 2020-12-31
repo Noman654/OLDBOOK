@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+ <ol style ="font-size:30px;">
+      {% for row in stores %}
+         <li> <h1 style= "color:red;">{{row}}</h1> </li>
+          <h4 style= "color:brown;">BOOKS_type</h4>
+          <ol style ="font-size:17px;">
+              {%for book in stores[row]%}
+                 <li><h5 style ="color:blue;">{{book}} BOOKS</h6></li>
+              {% endfor %}
+          </ol>
+  {% endfor %}
+  </ol>
+{% endblock %}

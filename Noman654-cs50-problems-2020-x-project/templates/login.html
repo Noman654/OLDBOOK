@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+   <div class="form" style ="border-color: #f7396e; BACKGROUND-COLOR: #96c1c1;"onsubmit=" return checkPassword(this)" method='POST'>
+        <form action="/login" method="post">
+            <h2 style="text-align:center;"><b> Login </b></h2>
+            <br>
+            <div class="form-group" style="align:center;">
+                <input autocomplete="off" autofocus class="form-control" name="email" placeholder="email" type="name123@mail.com">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </div>
+
+<script>
+// Function to check Whether both passwords
+    // is same or not.
+    function checkPassword(form) {
+        password1 = form.password.value;
+        name = form.name.value;
+        email = form.name.value;
+        // If password not entered
+        if (password1 == ''){
+            alert ("Please enter Password");
+            return false;
+        }
+        // if name not entered
+        if (name == ''){
+            alert ("Please enter a name ");
+            return false;
+        }
+        // check email option is blank or not
+        if (email == '' ){
+            alert ("Please enter a email ");
+            return false;
+        }
+
+        // If same return True.
+        else{
+                alert(" you success fully registered ");
+                return true;
+            }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+   <div class="form">
+        <form action="/register" method="post" onsubmit=" return checkPassword(this)">
+            <h2 style="text-align:center;"><b>Create An Account</b></h2>
+            <br>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name" type="text">
+            </div>
+            <div class="form-group" style="align:center;">
+                <input autocomplete="off" autofocus class="form-control" name="email" placeholder="email" type="name123@mail.com">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="Password-confirm" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to check Whether both passwords
+            // is same or not.
+            function checkPassword(form) {
+                password1 = form.password.value;
+                name = form.name.value;
+                email = form.name.value;
+                password2 = form.confirmation.value;
+
+                // If password not entered
+                if (password1 == ''){
+                    alert ("Please enter Password");
+                    return false;
+                }
+                // if name not entered
+                if (name == ''){
+                    alert ("Please enter a name ");
+                    return false;
+                }
+                // check email option is blank or not
+                if (email == '' ){
+                    alert ("Please enter a email ");
+                    return false;
+                }
+                // If confirm password not entered
+                else if (password2 == ''){
+                    alert ("Please enter confirm password");
+                    return false;
+                }
+                // If Not same return False.
+                else if (password1 != password2) {
+                    alert ("\nPassword did not match: Please try again...");
+                    return false;
+                }
+
+                // If same return True.
+                else{
+                    alert(" you success fully registered ");
+                    return true;
+                }
+            }
+    </script>
+{% endblock %}
